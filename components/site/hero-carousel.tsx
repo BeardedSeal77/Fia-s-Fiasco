@@ -49,8 +49,16 @@ export function HeroCarousel({ items }: HeroCarouselProps) {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="left-3 bg-background/70 backdrop-blur-sm" />
-      <CarouselNext className="right-3 bg-background/70 backdrop-blur-sm" />
+      <CarouselPrevious
+        className="left-3 bg-background/70 backdrop-blur-sm"
+        disabled={false}
+        suppressHydrationWarning
+      />
+      <CarouselNext
+        className="right-3 bg-background/70 backdrop-blur-sm"
+        disabled={false}
+        suppressHydrationWarning
+      />
     </Carousel>
   )
 }

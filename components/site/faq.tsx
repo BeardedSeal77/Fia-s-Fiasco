@@ -3,9 +3,9 @@ import { ChevronDown } from "lucide-react"
 import { Section } from "@/components/site/section"
 import type { FaqItem } from "@/lib/content"
 
-export function Faq({ items }: { items: FaqItem[] }) {
+export function Faq({ items, title }: { items: FaqItem[]; title: string }) {
   return (
-    <Section id="faq" title="Frequently asked questions">
+    <Section id="faq" title={title}>
       <div className="mx-auto max-w-3xl space-y-3">
         {items.map((item) => (
           <details

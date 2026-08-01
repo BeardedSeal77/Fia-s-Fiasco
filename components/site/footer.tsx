@@ -8,9 +8,12 @@ import type { SiteMeta } from "@/lib/content"
 interface FooterProps {
   site: SiteMeta
   bookHref: string
+  title: string
+  bookLabel: string
+  builtWith: string
 }
 
-export function Footer({ site, bookHref }: FooterProps) {
+export function Footer({ site, bookHref, title, bookLabel, builtWith }: FooterProps) {
   return (
     <footer id="contact" className="relative scroll-mt-20 overflow-hidden border-t">
       <div
@@ -29,7 +32,7 @@ export function Footer({ site, bookHref }: FooterProps) {
       </div>
       <div className="mx-auto max-w-5xl px-4 py-14 text-center md:py-20">
         <h2 className="font-heading text-2xl font-bold tracking-tight md:text-3xl">
-          Let&apos;s plan a session
+          {title}
         </h2>
         <p className="mx-auto mt-3 max-w-md text-sm text-muted-foreground">
           {site.contactBlurb}
@@ -52,7 +55,7 @@ export function Footer({ site, bookHref }: FooterProps) {
         <div className="mt-6 flex justify-center gap-2">
           <Button nativeButton={false} render={<a href={bookHref} />}>
             <Camera data-icon="inline-start" />
-            Book a session
+            {bookLabel}
           </Button>
           <Button
             variant="outline"
@@ -75,10 +78,16 @@ export function Footer({ site, bookHref }: FooterProps) {
           {site.location}
         </p>
 
+        <p className="mt-3 text-xs text-muted-foreground">
+          {site.addressName}
+          <br />
+          {site.addressCity}
+        </p>
+
         <Separator className="mx-auto mt-10 max-w-xs" />
         <p className="mt-6 text-xs text-muted-foreground">
-          &copy; {new Date().getFullYear()} {site.name} · {site.location} ·
-          Built with &#9829; and Leckerlis
+          &copy; {new Date().getFullYear()} {site.name} · {site.location} ·{" "}
+          {builtWith}
         </p>
       </div>
     </footer>

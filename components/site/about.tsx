@@ -1,9 +1,9 @@
 import { Section } from "@/components/site/section"
 import type { About as AboutContent } from "@/lib/content"
 
-export function About({ about }: { about: AboutContent }) {
+export function About({ about, title }: { about: AboutContent; title: string }) {
   return (
-    <Section id="about" title="Meet Fia">
+    <Section id="about" title={title}>
       <div className="grid gap-10 lg:grid-cols-[3fr_2fr]">
         <div>
           <div

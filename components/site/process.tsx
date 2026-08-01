@@ -1,9 +1,9 @@
 import { Section } from "@/components/site/section"
 import type { ProcessStep } from "@/lib/content"
 
-export function Process({ steps }: { steps: ProcessStep[] }) {
+export function Process({ steps, title }: { steps: ProcessStep[]; title: string }) {
   return (
-    <Section id="process" title="How it works">
+    <Section id="process" title={title}>
       <ol className="grid gap-8 md:grid-cols-4">
         {steps.map((step, i) => (
           <li key={step.title}>

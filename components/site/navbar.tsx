@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import Link from "next/link"
 import { Camera, Menu, PawPrint, X } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -15,10 +16,18 @@ export interface NavSection {
 interface NavbarProps {
   brand: string
   bookHref: string
+  bookLabel: string
   sections: NavSection[]
+  langSwitch: { label: string; href: string }
 }
 
-export function Navbar({ brand, bookHref, sections }: NavbarProps) {
+export function Navbar({
+  brand,
+  bookHref,
+  bookLabel,
+  sections,
+  langSwitch,
+}: NavbarProps) {
   const [activeId, setActiveId] = React.useState<string>("")
   const [menuOpen, setMenuOpen] = React.useState(false)
 
@@ -70,13 +79,21 @@ export function Navbar({ brand, bookHref, sections }: NavbarProps) {
         <div className="flex items-center gap-1.5">
           <ThemeToggle />
           <Button
+            variant="ghost"
+            size="sm"
+            nativeButton={false}
+            render={<Link href={langSwitch.href} />}
+          >
+            {langSwitch.label}
+          </Button>
+          <Button
             variant="outline"
             size="sm"
             nativeButton={false}
             render={<a href={bookHref} />}
           >
             <Camera data-icon="inline-start" />
-            Book
+            {bookLabel}
           </Button>
           <Button
             variant="ghost"

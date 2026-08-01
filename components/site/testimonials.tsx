@@ -6,11 +6,13 @@ import type { Testimonial } from "@/lib/content"
 
 export function Testimonials({
   testimonials,
+  title,
 }: {
   testimonials: Testimonial[]
+  title: string
 }) {
   return (
-    <Section id="testimonials" title="Kind words" className="bg-muted/30">
+    <Section id="testimonials" title={title} className="bg-muted/30">
       <div className="grid gap-6 md:grid-cols-3">
         {testimonials.map((item) => (
           <Card key={item.name}>

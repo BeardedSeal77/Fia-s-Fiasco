@@ -13,4 +13,4 @@ includes:
   - Owner-and-pet portraits included
 ---
 
-The classic Fia's Fiasco session. We plan the location around your pet's personality, take all the time we need, and come home with a gallery full of character. Humans are welcome in front of the camera too — Leckerlis for everyone.
+The standard session. Location planned around your pet, 60–90 minutes, up to two spots. Humans welcome in the frame — Leckerlis for everyone.

@@ -7,7 +7,7 @@ import { getSite } from "@/lib/content"
 import { cn } from "@/lib/utils"
 
 export async function generateMetadata(): Promise<Metadata> {
-  const site = await getSite()
+  const site = await getSite("en")
   const title = `${site.brand} | ${site.title}`
   const description = `${site.tagline} Sessions in ${site.location} with ${site.name}.`
   return {

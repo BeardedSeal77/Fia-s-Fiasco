@@ -9,9 +9,10 @@ interface HeroProps {
   site: SiteMeta
   bookHref: string
   items: GalleryItem[]
+  labels: { bookSession: string; callFia: string }
 }
 
-export function Hero({ site, bookHref, items }: HeroProps) {
+export function Hero({ site, bookHref, items, labels }: HeroProps) {
   return (
     <div id="top" className="relative overflow-x-clip">
       <div
@@ -73,7 +74,7 @@ export function Hero({ site, bookHref, items }: HeroProps) {
               render={<a href={bookHref} />}
             >
               <Camera data-icon="inline-start" />
-              Book a session
+              {labels.bookSession}
             </Button>
             <Button
               size="lg"
@@ -82,7 +83,7 @@ export function Hero({ site, bookHref, items }: HeroProps) {
               render={<a href={site.phoneHref} />}
             >
               <Phone data-icon="inline-start" />
-              Call Fia
+              {labels.callFia}
             </Button>
             <Button
               size="lg"

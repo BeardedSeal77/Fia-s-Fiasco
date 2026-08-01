@@ -8,6 +8,7 @@ const BASE_PATH = process.env.NODE_ENV === "production" ? "/Fia-s-Fiasco" : ""
 const nextConfig: NextConfig = {
   output: "export",
   basePath: BASE_PATH,
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },

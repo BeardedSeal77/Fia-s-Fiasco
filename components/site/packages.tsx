@@ -12,9 +12,16 @@ import {
 } from "@/components/ui/card"
 import type { ServicePackage } from "@/lib/content"
 
-export function Packages({ packages }: { packages: ServicePackage[] }) {
+interface PackagesProps {
+  packages: ServicePackage[]
+  title: string
+  note: string
+  mostPopular: string
+}
+
+export function Packages({ packages, title, note, mostPopular }: PackagesProps) {
   return (
-    <Section id="packages" title="Sessions & Pricing" className="bg-muted/30">
+    <Section id="packages" title={title} className="bg-muted/30">
       <div className="grid gap-6 md:grid-cols-3 items-stretch">
         {packages.map((pkg) => (
           <Card
@@ -28,7 +35,7 @@ export function Packages({ packages }: { packages: ServicePackage[] }) {
               </CardDescription>
               {pkg.featured && (
                 <CardAction>
-                  <Badge>Most popular</Badge>
+                  <Badge>{mostPopular}</Badge>
                 </CardAction>
               )}
             </CardHeader>
@@ -61,9 +68,7 @@ export function Packages({ packages }: { packages: ServicePackage[] }) {
       </div>
 
       <p className="mt-8 text-center text-sm text-muted-foreground">
-        Every session includes a pre-session chat, unlimited Leckerlis and
-        endless patience. Travel within Brandenburg included — further afield by
-        arrangement.
+        {note}
       </p>
     </Section>
   )
