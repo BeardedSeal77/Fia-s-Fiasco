@@ -1,18 +1,18 @@
+import Image from "next/image"
 import { Camera, Heart, MapPin, MessageCircleHeart, Phone } from "lucide-react"
 
-import { HeroCarousel } from "@/components/site/hero-carousel"
 import { InstagramIcon } from "@/components/site/icons"
 import { Button } from "@/components/ui/button"
-import type { GalleryItem, SiteMeta } from "@/lib/content"
+import type { SiteMeta } from "@/lib/content"
+import { withBasePath } from "@/lib/paths"
 
 interface HeroProps {
   site: SiteMeta
   bookHref: string
-  items: GalleryItem[]
   labels: { bookSession: string; callFia: string }
 }
 
-export function Hero({ site, bookHref, items, labels }: HeroProps) {
+export function Hero({ site, bookHref, labels }: HeroProps) {
   return (
     <div id="top" className="relative overflow-x-clip">
       <div
@@ -103,8 +103,15 @@ export function Hero({ site, bookHref, items, labels }: HeroProps) {
           </div>
         </div>
 
-        <div className="mx-auto w-60 shrink-0 md:w-80">
-          <HeroCarousel items={items} />
+        <div className="relative mx-auto aspect-[4/5] w-52 shrink-0 overflow-hidden rounded-[2rem] shadow-lg ring-4 ring-primary/25 md:w-64">
+          <Image
+            src={withBasePath(site.portrait)}
+            alt={site.name}
+            fill
+            sizes="(min-width: 768px) 16rem, 13rem"
+            className="object-cover"
+            priority
+          />
         </div>
       </div>
     </div>

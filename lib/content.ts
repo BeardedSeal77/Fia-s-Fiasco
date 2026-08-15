@@ -21,6 +21,7 @@ export interface SiteMeta {
   phoneHref: string
   instagram: string
   instagramLabel: string
+  portrait: string
   addressName: string
   addressCity: string
   contactBlurb: string
@@ -59,8 +60,6 @@ export interface About {
 export interface GalleryItem {
   src: string
   alt: string
-  category: string
-  caption: string
 }
 
 export interface ServicePackage {
@@ -127,8 +126,20 @@ export async function getAbout(locale: Locale): Promise<About> {
   return { ...data, html: await toHtml(content) } as About
 }
 
+const IMAGE_EXTENSIONS = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif"])
+
+// Populated from the filesystem, not markdown: any image dropped into
+// public/media/carousel/ appears in the carousel, sorted by filename.
 export async function getGallery(locale: Locale): Promise<GalleryItem[]> {
-  return readFile(locale, "gallery.md").data.items as GalleryItem[]
+  const dir = path.join(process.cwd(), "public", "media", "carousel")
+  if (!fs.existsSync(dir)) return []
+  const alt =
+    locale === "de" ? "Fotografie von Sofia Fahle" : "Photography by Sofia Fahle"
+  return fs
+    .readdirSync(dir)
+    .filter((file) => IMAGE_EXTENSIONS.has(path.extname(file).toLowerCase()))
+    .sort()
+    .map((file) => ({ src: `/media/carousel/${file}`, alt }))
 }
 
 export async function getPackages(locale: Locale): Promise<ServicePackage[]> {

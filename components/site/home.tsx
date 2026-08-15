@@ -2,6 +2,7 @@ import { About } from "@/components/site/about"
 import { Faq } from "@/components/site/faq"
 import { Footer } from "@/components/site/footer"
 import { Hero } from "@/components/site/hero"
+import { HeroCarousel } from "@/components/site/hero-carousel"
 import { Navbar, type NavSection } from "@/components/site/navbar"
 import { Packages } from "@/components/site/packages"
 import { Process } from "@/components/site/process"
@@ -59,9 +60,11 @@ export async function Home({ locale }: { locale: Locale }) {
         <Hero
           site={site}
           bookHref={bookHref}
-          items={gallery}
           labels={{ bookSession: labels.bookSession, callFia: labels.callFia }}
         />
+        <div className="mx-auto max-w-5xl px-4 pb-14 md:pb-20">
+          <HeroCarousel items={gallery} />
+        </div>
         <About about={about} title={labels.titles.about} />
         <Packages
           packages={packages}

@@ -1,17 +1,17 @@
 ---
 brand: "Fia's Fiasco"
 name: 'Sofia "Fia" Fahle'
-title: Tierporträt-Fotografie
+title: Tierfotografie & Portraitshootings
 greeting: "Hallo!"
-tagline: "Tierporträts mit Persönlichkeit — geduldige Sessions, natürliches Licht, keine gestellten Posen."
+tagline: "Porträts mit Persönlichkeit — Tiere, Pferde und ihre Menschen. Geduldige Sessions, natürliches Licht, keine gestellten Posen."
 location: "Brandenburg an der Havel"
 email: sofia.fahle@gmx.de
 phone: "+49 1575 175 1115"
 phoneHref: "tel:+4915751751115"
-# TODO: Instagram-Handle ersetzen, sobald es das echte Profil gibt
-instagram: https://www.instagram.com/fias.fiasco
-instagramLabel: "@fias.fiasco"
+instagram: https://www.instagram.com/soligrafie/
+instagramLabel: "@soligrafie"
+portrait: /media/title/sofialisann__2026-05-02T180631.000Z.jpg
 addressName: Sofia Fahle
 addressCity: 14776 Brandenburg an der Havel
-contactBlurb: "Schreib mir Name, Rasse und Eigenheiten deines Tieres — den Rest planen wir gemeinsam. Auf Deutsch oder Englisch."
+contactBlurb: "Wenn du auch Lust auf ein Shooting hast, melde dich gerne bei mir! Schreib mir einfach Name, Rasse und Eigenheiten deines Tieres — auf Deutsch oder Englisch."
 ---

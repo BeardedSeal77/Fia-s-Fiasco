@@ -1,6 +1,6 @@
 # Fia's Fiasco
 
-Pet portrait photography one-pager for Sofia "Fia" Fahle, built with Next.js (static export) and deployed to GitHub Pages. Bilingual: English at `/`, German at `/de/`.
+Animal & portrait photography one-pager for Sofia "Fia" Fahle ([@soligrafie](https://www.instagram.com/soligrafie/)), built with Next.js (static export) and deployed to GitHub Pages. Bilingual: English at `/`, German at `/de/`.
 
 ## Editing content
 
@@ -9,7 +9,6 @@ All copy lives in `content/en/` and `content/de/` as YAML frontmatter (parsed by
 - **Contact details** — `site.md` (brand name, email, phone, Instagram, address, contact blurb).
 - **UI labels** — `ui.md` (nav links, button text, section titles, language-switch label).
 - **About section** — `about.md` (stats, highlights and bio text).
-- **Gallery / hero carousel** — `gallery.md` (list of `{ src, alt, category, caption }` items displayed in the hero carousel).
 - **Sessions & pricing** — `packages/01-mini.md`, `02-signature.md`, `03-adventure.md`.
 - **How it works** — `process.md`.
 - **Testimonials** — `testimonials.md`.
@@ -19,15 +18,13 @@ The German page is served at `/de/`.
 
 ## Adding photos
 
-1. Drop the JPG into `public/media/`.
-2. Add an entry to `gallery.md` in both `content/en/` and `content/de/` with the `/media/filename.jpg` src, alt text, category and caption.
-3. Photos appear in the hero carousel automatically — no code changes needed. A dedicated gallery grid section can be re-added once the portfolio has enough images.
+- **Carousel**: drop images (jpg/png/webp/avif) into `public/media/carousel/` — they appear automatically, sorted by filename. No content edits needed.
+- **Hero portrait**: replace the file referenced by `portrait:` in `content/en/site.md` and `content/de/site.md` (currently in `public/media/title/`).
 
 ## Placeholders to update
 
 - Prices in `packages/` are starting-point estimates.
-- Testimonials in `testimonials.md` are sample quotes — replace with real client feedback.
-- The Instagram handle (`@fias.fiasco`) is a placeholder — update `site.md` once the real account is created.
+- Testimonials in `testimonials.md` are sample quotes (except ED Cullen's) — replace with real client feedback.
 
 ## Development
 
